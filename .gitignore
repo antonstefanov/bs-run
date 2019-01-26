@@ -1,0 +1,13 @@
+# mac fies
+.DS_Store
+
+# npm
+npm-debug.log
+yarn-error.log
+**/node_modules/
+package-lock.json
+
+# keep these
+!.gitkeep
+
+.vscode/settings.json

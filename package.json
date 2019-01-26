@@ -1,0 +1,18 @@
+{
+  "name": "bs-run",
+  "version": "0.0.1",
+  "description": "Run BuckleScript compiled ReasonML and OCaml files",
+  "main": "src/index.js",
+  "author": "Anton Stefanov",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "bs-run": "src/index.js"
+  },
+  "dependencies": {
+    "esm": "^3.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.18"
+  }
+}
