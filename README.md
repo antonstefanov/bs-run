@@ -15,6 +15,13 @@ Suggested flow to use in conjuction with VSCode [`formulahendry.code-runner`](ht
   },
 ```
 
+```json
+for OCaml you might also have to change:
+  "code-runner.executorMap": {
+    "ocaml": "bs-run",
+  },
+```
+
 2. Add in `cmd+shift+p` -> `Preferences: Open Keyboard Shortcuts (JSON)`:
 
 ```json
