@@ -26,7 +26,7 @@ for OCaml you might also have to change:
 
 ```json
 {
-  "key": "cmd+enter",
+  "key": "shift+enter",
   "command": "code-runner.run",
   "when": "editorTextFocus"
 }
