@@ -32,6 +32,6 @@ for OCaml you might also have to change:
 }
 ```
 
-3. While in a `.re` or `.ml` file use `cmd+enter` to run it
+3. While in a `.re` or `.ml` file use `shift+enter` to run it
 
 Now you can log and test short snippets of your code.
