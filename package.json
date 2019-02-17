@@ -1,6 +1,6 @@
 {
   "name": "bs-run",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Run BuckleScript compiled ReasonML and OCaml files",
   "main": "src/index.js",
   "author": "Anton Stefanov",

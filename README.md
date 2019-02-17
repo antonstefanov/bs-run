@@ -4,7 +4,13 @@ Easily run `.re` and `.ml` files directly in your BuckleScript project.
 
 Note that `bs-run` does not compile `.re` and `.ml` files, it will execute `yarn build` and will use the BuckleScript compiled files.
 
-Suggested flow to use in conjuction with VSCode [`formulahendry.code-runner`](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner):
+Suggested flow to use `bs-run`:
+
+```sh
+  npm -g install bs-run
+```
+
+Install VSCode [`formulahendry.code-runner`](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (a VS Code extension):
 
 1. Edit your vscode user/workspace settings:
 
