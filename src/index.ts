@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const path = require("path");
+import * as path from "path";
 
-const args = require("./util/args");
-const run = require("./node/run");
-const shell = require("./node/shell");
+import * as args from "./util/args";
+import * as run from "./node/run";
+import * as shell from "./node/shell";
 
 const build = async (cwd = ".") =>
   new Promise((resolve, reject) =>

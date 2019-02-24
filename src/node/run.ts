@@ -1,7 +1,8 @@
-const bs = require("./bs");
-const path = require("path");
+import * as path from "path";
 
-const getInfo = async executedFile => {
+import * as bs from "./bs";
+
+export const getInfo = async (executedFile: string) => {
   const absoluteExecutedFile = path.resolve(__dirname, executedFile);
   const fileInfo = path.parse(absoluteExecutedFile);
   const bsConfigPath = await bs.closestBsConfigPathAsync(fileInfo.dir);
@@ -22,20 +23,14 @@ const getInfo = async executedFile => {
   };
 };
 
-const executeFile = async (fileName, isEs) => {
+export const executeFile = async (fileName: string, isEs: boolean) => {
   if (isEs) {
     require = require("esm")(module);
   }
   require(fileName);
 };
 
-const run = async executedFile => {
+export const run = async (executedFile: string) => {
   const { bsConfig, compiledFileName } = await getInfo(executedFile);
   return executeFile(compiledFileName, bs.isEs(bsConfig));
-};
-
-module.exports = {
-  getInfo,
-  executeFile,
-  run,
 };

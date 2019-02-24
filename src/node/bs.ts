@@ -1,11 +1,12 @@
-const path = require("path");
+import * as path from "path";
 
-const bs = require("../util/bs");
-const fs = require("./fs");
+import * as bs from "../util/bs";
+import * as fs from "./fs";
 
-const readConfigAsync = configPath => fs.readJsoncAsync(configPath);
+export const readConfigAsync = (configPath: string) =>
+  fs.readJsoncAsync(configPath);
 
-const closestBsConfigPathAsync = async dir => {
+export const closestBsConfigPathAsync = async (dir: string) => {
   const closestBsConfigDir = await fs.findClosestFileAsync(
     dir,
     "bsconfig.json",
@@ -15,19 +16,28 @@ const closestBsConfigPathAsync = async dir => {
   return path.join(closestBsConfigDir, "bsconfig.json");
 };
 
-const getSourceFilePath = (baseDir, filePath, suffix, es6) => {
+const getSourceFilePath = (
+  baseDir: string,
+  filePath: string,
+  suffix: string,
+  es6: boolean,
+) => {
   const fileInfo = path.parse(filePath);
   const pathFromBase = fileInfo.dir.replace(baseDir, "");
   const location = path.join(baseDir, "lib", es6 ? "es6" : "js", pathFromBase);
   return `${location}/${fileInfo.name}${suffix}`;
 };
 
-const getInSourceFilePath = (filePath, suffix) => {
+const getInSourceFilePath = (filePath: string, suffix: string) => {
   const fileInfo = path.parse(filePath);
   return `${fileInfo.dir}/${fileInfo.name}${suffix}`;
 };
 
-const compiledFileName = (bsConfig, bsConfigPath, filePath) => {
+export const compiledFileName = (
+  bsConfig: bs.T,
+  bsConfigPath: string,
+  filePath: string,
+) => {
   if (bs.inSource(bsConfig)) {
     return getInSourceFilePath(filePath, bs.suffix(bsConfig));
   }
@@ -39,10 +49,5 @@ const compiledFileName = (bsConfig, bsConfigPath, filePath) => {
   );
 };
 
-module.exports = {
-  closestBsConfigPathAsync,
-  readConfigAsync,
-  compiledFileName,
-  name: bs.name,
-  isEs: bs.isEs,
-};
+export const name = bs.name;
+export const isEs = bs.isEs;
